@@ -65,6 +65,22 @@
             return theSuitOfCard;
         }
 
+        function isPair(poker) {
+            let valueOfCard = getTheValueOfCard(poker);
+            let firstCard = valueOfCard[0];
+            let duplicate = 1;
+            for (let i = 1; i < valueOfCard.length; i++) {
+                if (firstCard == valueOfCard[i]) {
+                    duplicate += 1;
+                }
+            }
+            if (duplicate == 2) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
         function getTheScoreOfTheFirstPoker() {
             let firstPoker = setTheFirstPoker();
 
