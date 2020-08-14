@@ -45,6 +45,30 @@
             return theSecondPoker;
         }
 
+        function getTheValueOfCard(thePoker) {
+            let theValueOfCard = [];
+
+            for (let i = 0; i < thePoker.length; i++) {
+                theValueOfCard.push(thePoker[i].charAt(0))
+            }
+
+            return theValueOfCard;
+        }
+
+        function getTheSuitOfCard(thePoker) {
+            let theSuitOfCard = [];
+
+            for (let i = 0; i < thePoker.length; i++) {
+                theSuitOfCard.push(thePoker[i].charAt(1))
+            }
+
+            return theSuitOfCard;
+        }
+
+        let a = setTheFirstPoker();
+        let b = getTheSuitOfCard(a);
+        console.log(b);
+
 
         function getTheScoreOfTheFirstPoker() {
             let firstPoker = setTheFirstPoker();
