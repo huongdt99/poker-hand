@@ -19,7 +19,7 @@
         const THREE_OF_A_KIND = 50;
         const TWO_PAIRS = 40;
         const PAIR = 30;
-        const HIGHT_CARD = 20;
+        const HIGH_CARD = 20;
 
         function setTheFirstPoker() {
             let theFirstPoker = [];
@@ -65,7 +65,7 @@
                 return TWO_PAIRS;
             } else if (isPair(firstPoker)) {
                 return PAIR;
-            } else return HIGH_SCORE;
+            } else return HIGH_CARD;
         }
 
         function getTheScoreOfTheSecondPoker() {
@@ -87,7 +87,7 @@
                 return TWO_PAIRS;
             } else if (isPair(secondPoker)) {
                 return PAIR;
-            } else return HIGH_SCORE;
+            } else return HIGH_CARD;
         }
 
         function getTheWinner() {
@@ -95,11 +95,11 @@
             let scoreOfSecondPoker = getTheScoreOfTheSecondPoker();
 
             if (scoreOfFirstPoker > scoreOfSecondPoker) {
-
-            } else if (scoreOfFirstPoker = scoreOfSecondPoker) {
-
+                return "The First Poker Hand Win";
+            } else if (scoreOfFirstPoker == scoreOfSecondPoker) {
+                return "Tie";
             } else {
-
+                return "The Second Poker Hand Win";
             }
         }
     })
