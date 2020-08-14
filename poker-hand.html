@@ -5,16 +5,102 @@
     <title>Poker Hand</title>
 </head>
 <body>
-<h1>The Poker Hands</h1>
-<form>
-    <label>First Poker Hand:</label>
-    <input type="text" id="first-poker" name="first-poker"><br><br>
-    <label>Second Poker Hand:</label>
-    <input type="text" id="second-poker" name="second-poker"><br><br>
-    <input type="submit" value="Play">
-</form>
-<div id="result">
 
-</div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        const STRAIGHT_FLUSH = 100;
+        const FOUR_OF_A_KIND = 90;
+        const FULL_HOUSE = 80;
+        const FLUSH = 70;
+        const STRAIGHT = 60;
+        const THREE_OF_A_KIND = 50;
+        const TWO_PAIRS = 40;
+        const PAIR = 30;
+        const HIGHT_CARD = 20;
+
+        function setTheFirstPoker() {
+            let theFirstPoker = [];
+
+            theFirstPoker.push('2A');
+            theFirstPoker.push('2A');
+            theFirstPoker.push('2A');
+            theFirstPoker.push('2A');
+            theFirstPoker.push('2A');
+
+            return theFirstPoker;
+        }
+
+        function setTheSecondPoker() {
+            let theSecondPoker = [];
+            theSecondPoker.push('2A');
+            theSecondPoker.push('2A');
+            theSecondPoker.push('2A');
+            theSecondPoker.push('2A');
+            theSecondPoker.push('2A');
+
+            return theSecondPoker;
+        }
+
+
+        function getTheScroreOfTheFirstPoker() {
+            let firstPoker = setTheFirstPoker();
+
+            if (isStraightFlush(firstPoker)) {
+                return STRAIGHT_FLUSH;
+            } else if (isFourOfAKind(firstPoker)) {
+                return FOUR_OF_A_KIND;
+            } else if (isFullHouse(firstPoker)) {
+                return FULL_HOUSE;
+            } else if (isFlush(firstPoker)) {
+                return FLUSH;
+            } else if (isStraight(firstPoker)) {
+                return STRAIGHT;
+            } else if (isThreeOfAKind(firstPoker)) {
+                return THREE_OF_A_KIND;
+            } else if (isTwoPairs(firstPoker)) {
+                return TWO_PAIRS;
+            } else if (isPair(firstPoker)) {
+                return PAIR;
+            } else return HIGH_SCORE;
+        }
+
+        function getTheScroreOfTheSecondPoker() {
+            let secondPoker = setTheSecondPoker()
+
+            if (isStraightFlush(secondPoker)) {
+                return STRAIGHT_FLUSH;
+            } else if (isFourOfAKind(secondPoker)) {
+                return FOUR_OF_A_KIND;
+            } else if (isFullHouse(secondPoker)) {
+                return FULL_HOUSE;
+            } else if (isFlush(secondPoker)) {
+                return FLUSH;
+            } else if (isStraight(secondPoker)) {
+                return STRAIGHT;
+            } else if (isThreeOfAKind(secondPoker)) {
+                return THREE_OF_A_KIND;
+            } else if (isTwoPairs(secondPoker)) {
+                return TWO_PAIRS;
+            } else if (isPair(secondPoker)) {
+                return PAIR;
+            } else return HIGH_SCORE;
+        }
+
+        function getTheWinner() {
+            let scoreOfFirstPoker = getTheScroreOfTheFirstPoker();
+            let scoreOfSecondPoker = getTheScroreOfTheSecondPoker();
+
+            if (scoreOfFirstPoker > scoreOfSecondPoker) {
+
+            } else if (scoreOfFirstPoker = scoreOfSecondPoker) {
+
+            } else {
+
+            }
+        }
+    })
+</script>
 </html>
