@@ -35,6 +35,7 @@
 
         function setTheSecondPoker() {
             let theSecondPoker = [];
+
             theSecondPoker.push('2A');
             theSecondPoker.push('2A');
             theSecondPoker.push('2A');
@@ -45,7 +46,7 @@
         }
 
 
-        function getTheScroreOfTheFirstPoker() {
+        function getTheScoreOfTheFirstPoker() {
             let firstPoker = setTheFirstPoker();
 
             if (isStraightFlush(firstPoker)) {
@@ -67,7 +68,7 @@
             } else return HIGH_SCORE;
         }
 
-        function getTheScroreOfTheSecondPoker() {
+        function getTheScoreOfTheSecondPoker() {
             let secondPoker = setTheSecondPoker()
 
             if (isStraightFlush(secondPoker)) {
@@ -90,8 +91,8 @@
         }
 
         function getTheWinner() {
-            let scoreOfFirstPoker = getTheScroreOfTheFirstPoker();
-            let scoreOfSecondPoker = getTheScroreOfTheSecondPoker();
+            let scoreOfFirstPoker = getTheScoreOfTheFirstPoker();
+            let scoreOfSecondPoker = getTheScoreOfTheSecondPoker();
 
             if (scoreOfFirstPoker > scoreOfSecondPoker) {
 
