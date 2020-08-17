@@ -67,18 +67,25 @@
 
         function isPair(poker) {
             let valueOfCard = getTheValueOfCard(poker);
-            let firstCard = valueOfCard[0];
-            let duplicate = 1;
-            for (let i = 1; i < valueOfCard.length; i++) {
-                if (firstCard == valueOfCard[i]) {
-                    duplicate += 1;
+            var object = {};
+            var result = [];
+
+            valueOfCard.forEach(function (item) {
+                if (!object[item])
+                    object[item] = 0;
+                object[item] += 1;
+            })
+
+            for (var prop in object) {
+                if (object[prop] === 2) {
+                    result.push(prop);
                 }
             }
-            if (duplicate === 2) {
+
+            if (result.length === 1) {
                 return true;
-            } else {
+            } else
                 return false;
-            }
         }
 
         function isTwoPairs(poker) {
@@ -147,6 +154,12 @@
                 }
             }
             return true;
+        }
+
+        function isFullHouse(poker) {
+            if (isThreeOfAKind(poker) && isPair(poker))
+            return true;
+            return false;
         }
 
         function getTheScoreOfThePoker(poker) {
