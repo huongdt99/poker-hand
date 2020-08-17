@@ -186,7 +186,7 @@
 
         function isStraightFlush(poker) {
             if (isStraight(poker) && isFlush(poker))
-            return true;
+                return true;
             return false;
         }
 
@@ -210,6 +210,29 @@
             } else return HIGH_CARD;
         }
 
+        function confirmTheScore(score) {
+            switch (score) {
+                case HIGH_CARD:
+                    return "High Card";
+                case PAIR:
+                    return "PAIR";
+                case TWO_PAIRS:
+                    return "TWO PAIR";
+                case THREE_OF_A_KIND:
+                    return "THREE OF A KIND";
+                case STRAIGHT:
+                    return "STRAIGHT";
+                case FLUSH:
+                    return "FLUSH";
+                case FULL_HOUSE:
+                    return "FULL HOUSE";
+                case FOUR_OF_A_KIND:
+                    return "FOUR OF A KIND";
+                case STRAIGHT_FLUSH:
+                    return "STRAIGHT FLUSH";
+            }
+        }
+
         function getTheWinner() {
             let firstPoker = setTheFirstPoker();
             let secondPoker = setTheSecondPoker();
@@ -217,11 +240,11 @@
             let scoreOfSecondPoker = getTheScoreOfThePoker(secondPoker);
 
             if (scoreOfFirstPoker > scoreOfSecondPoker) {
-                return "The First Poker Hand Win";
+                return "The First Poker Hand Win" + " - " + confirmTheScore(scoreOfFirstPoker);
             } else if (scoreOfFirstPoker == scoreOfSecondPoker) {
                 return "Tie";
             } else {
-                return "The Second Poker Hand Win";
+                return "The Second Poker Hand Win" + " - " + confirmTheScore(scoreOfSecondPoker);
             }
         }
 
