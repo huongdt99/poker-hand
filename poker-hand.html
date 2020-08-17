@@ -28,7 +28,7 @@
             theFirstPoker.push('2A');
             theFirstPoker.push('2A');
             theFirstPoker.push('2A');
-            theFirstPoker.push('2A');
+            theFirstPoker.push('1A');
 
             return theFirstPoker;
         }
@@ -99,6 +99,29 @@
             }
 
             if (result.length === 2) {
+                return true;
+            } else
+                return false;
+        }
+
+        function isThreeOfAKind(poker) {
+            let valueOfCard = getTheValueOfCard(poker);
+            var object = {};
+            var result = [];
+
+            valueOfCard.forEach(function (item) {
+                if (!object[item])
+                    object[item] = 0;
+                object[item] += 1;
+            })
+
+            for (var prop in object) {
+                if (object[prop] === 3) {
+                    result.push(prop);
+                }
+            }
+
+            if (result.length === 1) {
                 return true;
             } else
                 return false;
