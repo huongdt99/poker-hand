@@ -137,7 +137,6 @@
         function isStraight(poker) {
             let valueOfCard = getTheValueOfCard(poker);
             valueOfCard.sort();
-            console.log(valueOfCard);
             for (let i = 0; i < valueOfCard.length - 1; i++) {
                 if (valueOfCard[i] != valueOfCard[i + 1] - 1) {
                     return false;
@@ -183,6 +182,12 @@
                 return true;
             } else
                 return false;
+        }
+
+        function isStraightFlush(poker) {
+            if (isStraight(poker) && isFlush(poker))
+            return true;
+            return false;
         }
 
         function getTheScoreOfThePoker(poker) {
