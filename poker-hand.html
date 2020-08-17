@@ -127,6 +127,18 @@
                 return false;
         }
 
+        function isStraight(poker) {
+            let valueOfCard = getTheValueOfCard(poker);
+            valueOfCard.sort();
+            console.log(valueOfCard);
+            for (let i = 0; i < valueOfCard.length - 1; i++) {
+                if (valueOfCard[i] != valueOfCard[i + 1] - 1) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         function getTheScoreOfThePoker(poker) {
             if (isStraightFlush(poker)) {
                 return STRAIGHT_FLUSH;
