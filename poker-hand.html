@@ -139,6 +139,16 @@
             return true;
         }
 
+        function isFlush(poker) {
+            let suitOfCard = getTheSuitOfCard(poker);
+            for (let i = 0; i < suitOfCard.length - 1; i++) {
+                if (suitOfCard[i] != suitOfCard[i + 1]) {
+                    return false
+                }
+            }
+            return true;
+        }
+
         function getTheScoreOfThePoker(poker) {
             if (isStraightFlush(poker)) {
                 return STRAIGHT_FLUSH;
