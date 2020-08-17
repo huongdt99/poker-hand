@@ -74,60 +74,38 @@
                     duplicate += 1;
                 }
             }
-            if (duplicate == 2) {
+            if (duplicate === 2) {
                 return true;
             } else {
                 return false;
             }
         }
 
-        function getTheScoreOfTheFirstPoker() {
-            let firstPoker = setTheFirstPoker();
-
-            if (isStraightFlush(firstPoker)) {
+        function getTheScoreOfThePoker(poker) {
+            if (isStraightFlush(poker)) {
                 return STRAIGHT_FLUSH;
-            } else if (isFourOfAKind(firstPoker)) {
+            } else if (isFourOfAKind(poker)) {
                 return FOUR_OF_A_KIND;
-            } else if (isFullHouse(firstPoker)) {
+            } else if (isFullHouse(poker)) {
                 return FULL_HOUSE;
-            } else if (isFlush(firstPoker)) {
+            } else if (isFlush(poker)) {
                 return FLUSH;
-            } else if (isStraight(firstPoker)) {
+            } else if (isStraight(poker)) {
                 return STRAIGHT;
-            } else if (isThreeOfAKind(firstPoker)) {
+            } else if (isThreeOfAKind(poker)) {
                 return THREE_OF_A_KIND;
-            } else if (isTwoPairs(firstPoker)) {
+            } else if (isTwoPairs(poker)) {
                 return TWO_PAIRS;
-            } else if (isPair(firstPoker)) {
-                return PAIR;
-            } else return HIGH_CARD;
-        }
-
-        function getTheScoreOfTheSecondPoker() {
-            let secondPoker = setTheSecondPoker()
-
-            if (isStraightFlush(secondPoker)) {
-                return STRAIGHT_FLUSH;
-            } else if (isFourOfAKind(secondPoker)) {
-                return FOUR_OF_A_KIND;
-            } else if (isFullHouse(secondPoker)) {
-                return FULL_HOUSE;
-            } else if (isFlush(secondPoker)) {
-                return FLUSH;
-            } else if (isStraight(secondPoker)) {
-                return STRAIGHT;
-            } else if (isThreeOfAKind(secondPoker)) {
-                return THREE_OF_A_KIND;
-            } else if (isTwoPairs(secondPoker)) {
-                return TWO_PAIRS;
-            } else if (isPair(secondPoker)) {
+            } else if (isPair(poker)) {
                 return PAIR;
             } else return HIGH_CARD;
         }
 
         function getTheWinner() {
-            let scoreOfFirstPoker = getTheScoreOfTheFirstPoker();
-            let scoreOfSecondPoker = getTheScoreOfTheSecondPoker();
+            let firstPoker = setTheFirstPoker();
+            let secondPoker = setTheSecondPoker();
+            let scoreOfFirstPoker = getTheScoreOfThePoker(firstPoker);
+            let scoreOfSecondPoker = getTheScoreOfThePoker(secondPoker);
 
             if (scoreOfFirstPoker > scoreOfSecondPoker) {
                 return "The First Poker Hand Win";
